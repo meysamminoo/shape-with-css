@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0e161f;
+}
+#cup {
+  width: 240px;
+  height: 350px;
+  border: 10px solid #0e161f;
+  position: relative;
+  box-shadow: 0 0 0 8px #fff, inset 20px -20px 20px rgba(255, 255, 255, 0.5),
+    inset -10px -20px 20px rgba(255, 255, 255, 0.5);
+  border-radius: 0 0 50px 50px;
+  background-image: url(./image/water.png);
+  background-repeat: repeat-x;
+  background-position: 0 350px ;
+  animation: filling 20s ease-in-out infinite;
+}
+#cup::after {
+  content: '';
+  width:70px;
+  height: 140px;
+  position: absolute;
+  left: 250px;
+  top: 50px;
+  border: 8px solid #fff;
+  border-radius: 0 20px 50px 0;
+  border-right-width: 12px;
+}
+
+@keyframes filling {
+  50% {
+    background-position: 3000px 0;
+  }
+  100% {
+    background-position: 6000px 350px;
+  }
+}

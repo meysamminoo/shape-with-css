@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.watermelon {
+  width: 320px;
+  height: 160px;
+  background: #ff395d;
+  border-top: 20px solid #92e256;
+  border-right: 20px solid #92e256;
+  border-left: 20px solid #92e256;
+  border-bottom: 20px solid #92e256;
+  border-radius: 0 0 200px 200px;
+  transform: rotate(25deg);
+  animation: move 4s ease-in-out infinite;
+}
+.watermelon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: calc(50% + 20px);
+  height: calc(100% + 20px);
+  background: rgba(255, 255, 255, 0.5);
+}
+span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #262626;
+  border-radius: 50%;
+  margin: 20px;
+  position: relative;
+  left: 11%;
+}
+span:nth-child(6),
+span:nth-child(12),
+span:nth-child(13) {
+  background: transparent;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(25deg);
+  }
+  50% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}
